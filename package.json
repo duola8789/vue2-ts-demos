@@ -5,25 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build --modern",
-    "analyze": "vue-cli-service build --modern --report",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
+    "analyze": "vue-cli-service build --modern --report",
     "preview": "cd dist && npx http-server -a 127.0.0.1 -p 7000"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,vue}": [
-      "prettier --check",
-      "eslint"
-    ],
-    "src/**/*.{vue,htm,html,css,sss,less}": [
-      "stylelint"
-    ]
   },
   "dependencies": {
     "core-js": "^3.4.3",
+    "element-ui": "^2.4.5",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.3.0",
@@ -42,6 +31,7 @@
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "babel-plugin-component": "^1.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
@@ -53,6 +43,19 @@
     "stylelint-config-standard": "^19.0.0",
     "stylelint-webpack-plugin": "^1.1.2",
     "typescript": "~3.5.3",
+    "vue-cli-plugin-element": "^1.0.1",
     "vue-template-compiler": "^2.6.10"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,vue}": [
+      "prettier --check",
+      "eslint"
+    ],
+    "src/**/*.{vue,htm,html,css,sss,less}": [
+      "stylelint"
+    ]
   }
 }
