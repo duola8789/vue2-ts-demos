@@ -7,7 +7,8 @@
     "build": "vue-cli-service build --modern",
     "analyze": "vue-cli-service build --modern --report",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "preview": "cd dist && npx http-server -a 127.0.0.1 -p 7000"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
