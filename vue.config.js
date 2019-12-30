@@ -24,6 +24,7 @@ function addStyleResource (rule) {
     .options({
       patterns: [
         path.resolve(__dirname, './src/styles/variables.less'),
+        path.resolve(__dirname, './src/styles/mixins.less'),
       ],
     })
 }

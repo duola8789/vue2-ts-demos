@@ -6,8 +6,8 @@ const menuConfigs: menu[] = [
     icon: 'el-icon-location',
     title: '基础知识',
     children: [
-      { path: '/hello-vue', title: 'Hello Vue', icon: 'el-icon-location' },
-      { path: '/methods-and-template', title: '实例方法和模版', icon: 'el-icon-location' }
+      { path: '/base/hello-vue', title: 'Hello Vue', icon: 'el-icon-location' },
+      { path: '/base/methods-and-template', title: '实例方法和模版', icon: 'el-icon-location' }
     ]
   }
 ];

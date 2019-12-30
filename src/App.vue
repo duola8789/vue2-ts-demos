@@ -2,7 +2,8 @@
   <div id="app" class="container">
     <el-header class="head" height="60px">
       <el-button :icon="collapseButtonIcon" class="collapse-button" circle @click="collapseMenu" />
-      <el-link href="/" type="primary" class="title" :underline="false">Vue Learning Demos</el-link>
+      <h1 class="title">Vue Learning Demos</h1>
+      <el-link href="#/" :underline="false" icon="el-icon-s-home" class="go-home-button" />
     </el-header>
     <el-container>
       <el-aside class="aside" width="auto">
@@ -16,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 import Menu from '@/views/common/Menu/index.vue';
 
@@ -28,16 +29,16 @@ import Menu from '@/views/common/Menu/index.vue';
 export default class App extends Vue {
   isCollapse: boolean = false;
 
-  collapseMenu(): void {
-    this.isCollapse = !this.isCollapse;
-  }
-
   get menuClass(): string {
     return this.isCollapse ? 'collapsed-menu' : 'expanded-menu';
   }
 
   get collapseButtonIcon(): string {
     return this.isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold';
+  }
+
+  collapseMenu(): void {
+    this.isCollapse = !this.isCollapse;
   }
 }
 </script>
@@ -51,11 +52,11 @@ body {
 }
 
 #app {
-  font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Heiti SC', 'Microsoft YaHei',
-    'WenQuanYi Micro Hei', sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-size: 14px;
   color: #2c3e50;
   height: 100%;
   display: flex;
@@ -70,9 +71,13 @@ body {
     line-height: 60px;
     background: #d3d3d3;
     font-size: 0;
+    text-align: center;
 
     .title {
+      height: inherit;
+      line-height: inherit;
       font-size: 20px;
+      color: @mainColor;
     }
 
     .collapse-button {
@@ -81,6 +86,14 @@ body {
       top: 50%;
       transform: translateY(-50%);
       font-size: 16px;
+    }
+
+    .go-home-button {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
     }
   }
 
