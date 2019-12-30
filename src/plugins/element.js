@@ -1,4 +1,4 @@
 import Vue from 'vue';
-import { Button } from 'element-ui';
+import { Container, Aside, Main, Header, Button, Link, Menu, MenuItem, Submenu, MenuItemGroup } from 'element-ui';
 
-Vue.use(Button);
+[Container, Aside, Main, Button, Header, Link, Menu, MenuItem, Submenu, MenuItemGroup].forEach((Comp) => Vue.use(Comp));
