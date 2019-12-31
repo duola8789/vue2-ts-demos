@@ -1,4 +1,4 @@
-import { RootState, UpdateTitleMutationPayload } from '@/store/root/types';
+import { RootState, UpdateTitleMutationPayload } from '@/store/rootStore/types';
 import { ActionContext, ActionPayload } from 'vuex';
 
 const mockFetch = (url?: string): Promise<string> => {
@@ -20,7 +20,7 @@ const mutations = {
 };
 
 const actions = {
-  async UPDATE_TITLE_ACTION({ commit }: ActionContext<undefined, RootState>, payload: ActionPayload): Promise<string> {
+  async UPDATE_TITLE_ACTION({ commit }: ActionContext<RootState, RootState>, payload: ActionPayload): Promise<string> {
     const result: string = await mockFetch();
     commit('UPDATE_TITLE_MUTATION', { payload: { title: result } });
     return result;

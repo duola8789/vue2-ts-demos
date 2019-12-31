@@ -14,7 +14,15 @@ module.exports = {
   chainWebpack: config => {
     // 自动导入样式文件
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal'];
-    types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+    types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)));
+
+    // 配置 TypeScript 检查配置
+    // https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#options
+    config.plugin('fork-ts-checker').tap(option => {
+      option[0].async = false;
+      option[0].eslint = true;
+      return option;
+    })
   },
 };
 
