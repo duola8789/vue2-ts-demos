@@ -4,7 +4,10 @@ const baseKnowledgeRoutes = [
   {
     path: '/base/hello-vue',
     name: 'base',
-    component: lazyLoad('baseKnowledge/HelloVue')
+    component: lazyLoad('baseKnowledge/HelloVue'),
+    meta: {
+      title: 'Hello Vue'
+    }
   }
 ];
 

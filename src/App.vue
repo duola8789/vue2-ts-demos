@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <el-header class="head" height="60px">
       <el-button :icon="collapseButtonIcon" class="collapse-button" circle @click="collapseMenu" />
-      <h1 class="title">Vue Learning Demos</h1>
+      <h1 class="title">{{ title }}</h1>
       <el-link href="#/" :underline="false" icon="el-icon-s-home" class="go-home-button" />
     </el-header>
     <el-container>
@@ -18,7 +18,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-
 import Menu from '@/views/common/Menu/index.vue';
 
 @Component({
@@ -28,6 +27,10 @@ import Menu from '@/views/common/Menu/index.vue';
 })
 export default class App extends Vue {
   isCollapse: boolean = false;
+
+  get title(): string {
+    return this.$store.state.title;
+  }
 
   get menuClass(): string {
     return this.isCollapse ? 'collapsed-menu' : 'expanded-menu';
