@@ -3,5 +3,7 @@ export interface RootState {
 }
 
 export interface UpdateTitleMutationPayload {
-  title: string;
+  payload: {
+    title: string;
+  };
 }
