@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import globalStore from '@/store/globalStore';
+import rootStore from '@/store/root/rootStore';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: globalStore.state,
-  mutations: globalStore.mutations,
-  actions: globalStore.actions,
+  state: rootStore.state,
+  mutations: rootStore.mutations,
+  actions: rootStore.actions,
   modules: {}
 });

@@ -18,6 +18,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { State } from 'vuex-class';
 import Menu from '@/views/common/Menu/index.vue';
 
 @Component({
@@ -28,9 +29,7 @@ import Menu from '@/views/common/Menu/index.vue';
 export default class App extends Vue {
   isCollapse: boolean = false;
 
-  get title(): string {
-    return this.$store.state.title;
-  }
+  @State title!: number;
 
   get menuClass(): string {
     return this.isCollapse ? 'collapsed-menu' : 'expanded-menu';
