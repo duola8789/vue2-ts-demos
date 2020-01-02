@@ -1,15 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
-import rootStore from '@/store/rootStore/index';
-
-import { RootState } from './rootStore/types';
+import RootStore from '@/store/root-store/index';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store<RootState>({
-  state: rootStore.state,
-  mutations: rootStore.mutations,
-  actions: rootStore.actions,
+export default new Vuex.Store({
+  strict: process.env.NODE_ENV === 'development',
+  state: RootStore.state,
+  mutations: RootStore.mutations,
+  actions: RootStore.actions,
   modules: {}
 });

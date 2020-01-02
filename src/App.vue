@@ -21,11 +21,7 @@ import { Component, Vue } from 'vue-property-decorator';
 import { State } from 'vuex-class';
 import Menu from '@/views/common/Menu/index.vue';
 
-@Component({
-  components: {
-    Menu
-  }
-})
+@Component({ components: { Menu } })
 export default class App extends Vue {
   isCollapse: boolean = false;
 

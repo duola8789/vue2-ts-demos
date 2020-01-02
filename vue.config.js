@@ -20,7 +20,6 @@ module.exports = {
     // https://github.com/TypeStrong/fork-ts-checker-webpack-plugin#options
     config.plugin('fork-ts-checker').tap(option => {
       option[0].async = false;
-      option[0].eslint = true;
       return option;
     })
   },

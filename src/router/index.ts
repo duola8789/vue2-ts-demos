@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig, NavigationGuard } from 'vue-router';
+import VueRouter, { RouteConfig } from 'vue-router';
 import baseKnowledge from './modules/baseKnowledge';
 import { lazyLoad } from '@/utils';
-import { beforeEachCallback } from '@/router/routerGuards';
+import { beforeEachCallback } from '@/router/router-guards';
 
 Vue.use(VueRouter);
 
