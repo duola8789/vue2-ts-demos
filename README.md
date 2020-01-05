@@ -1,29 +1,23 @@
 # vue-learning-new
 
-## Project setup
+## 脚本
+
 ```
+# 安装依赖
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
+# 开发
 yarn serve
-```
 
-### Compiles and minifies for production
-```
+# 编译（生产环境）
 yarn build
-```
 
-### Run your unit tests
-```
-yarn test:unit
-```
+# 编译（开发环境）
+yarn build-dev
 
-### Lints and fixes files
-```
-yarn lint
-```
+# 编译（测试环境）
+yarn build-staging
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 本地 7000 端口预览编译后文件
+preview
+```
