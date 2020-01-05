@@ -9,8 +9,37 @@ const changeTitle = (title: string): void => {
 };
 
 const beforeEachCallback: NavigationGuard = (to, from, next) => {
+  if (to.path === '/base/life-circles') {
+    // eslint-disable-next-line no-console
+    console.log('beforeEach');
+  }
+
   changeTitle(to.meta.title || 'Vue Learning Demos');
   next();
 };
 
-export { beforeEachCallback };
+const beforeEnterLifeCircle: NavigationGuard = (to, from, next) => {
+  if (to.path === '/base/life-circles') {
+    // eslint-disable-next-line no-console
+    console.log('beforeEnter');
+  }
+  next();
+};
+
+const beforeResolveCallback: NavigationGuard = (to, from, next) => {
+  if (to.path === '/base/life-circles') {
+    // eslint-disable-next-line no-console
+    console.log('beforeResolve');
+  }
+  next();
+};
+
+const afterEachCallback: NavigationGuard = (to, from, next) => {
+  if (to.path === '/base/life-circles' || from.path === '/base/life-circles') {
+    // eslint-disable-next-line no-console
+    console.log('afterEach');
+  }
+  next();
+};
+
+export { beforeEachCallback, beforeEnterLifeCircle, beforeResolveCallback, afterEachCallback };

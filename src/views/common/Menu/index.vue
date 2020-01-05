@@ -1,5 +1,11 @@
 <template>
-  <el-menu class="menu" :router="true" :collapse="isCollapse" :collapse-transition="false">
+  <el-menu
+    class="menu"
+    :router="true"
+    :collapse="isCollapse"
+    :collapse-transition="false"
+    :default-active="$route.path"
+  >
     <el-submenu v-for="submenu in menus" :key="submenu.path" :index="submenu.path">
       <!-- submenu -->
       <template slot="title">
