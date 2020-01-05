@@ -16,6 +16,7 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
+    'vue/component-name-in-template-casing': ['error',  'kebab-case']
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"
