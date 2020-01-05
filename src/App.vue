@@ -9,7 +9,7 @@
       <el-aside class="aside" width="auto">
         <Menu :is-collapse="isCollapse" :class="menuClass" class="menu" />
       </el-aside>
-      <el-main>
+      <el-main class="main">
         <router-view />
       </el-main>
     </el-container>
@@ -59,6 +59,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-width: 960px;
 }
 </style>
 
