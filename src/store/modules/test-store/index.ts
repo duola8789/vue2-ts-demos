@@ -1,22 +1,20 @@
 import { Module, Mutation, Action, VuexModule } from 'vuex-module-decorators';
 import store from '@/store';
-import { mockFetch } from '@/utils';
+import { setTimeoutThen } from '@/utils';
 
 @Module({ dynamic: true, namespaced: true, store, name: 'testStore' })
 export default class TestStore extends VuexModule {
   // state
   message: string = '';
 
-  // mutation
   @Mutation
   UPDATE_MESSAGE_MUTATION(title: string): void {
     this.message = title;
   }
 
-  // action
   @Action
   async UPDATE_MESSAGE_ACTION(): Promise<string> {
-    const result: string = await mockFetch();
+    const result: string = await setTimeoutThen();
     this.context.commit('UPDATE_MESSAGE_MUTATION', result);
     return result;
   }

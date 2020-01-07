@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import baseKnowledge from './modules/baseKnowledge';
-import { lazyLoad } from '@/utils';
+import { lazyLoadHelper } from '@/utils';
 import { beforeEachCallback, beforeResolveCallback, afterEachCallback } from '@/router/router-guards';
 
 Vue.use(VueRouter);
@@ -10,7 +10,7 @@ const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'home',
-    component: lazyLoad('Home'),
+    component: lazyLoadHelper('Home'),
     meta: {
       title: 'Vue Learning Demos'
     }
@@ -19,7 +19,7 @@ const routes: RouteConfig[] = [
   {
     path: '*',
     name: 'NotFound',
-    component: lazyLoad('common/NotFound'),
+    component: lazyLoadHelper('common/NotFound'),
     meta: {
       title: 'Not Found'
     }

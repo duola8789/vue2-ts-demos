@@ -18,7 +18,8 @@ import {
   Dialog,
   Steps,
   Step,
-  Notification
+  Notification,
+  Loading
 } from 'element-ui';
 
 [
@@ -43,3 +44,4 @@ import {
 ].forEach((Comp) => Vue.use(Comp));
 
 Vue.prototype.$notify = Notification;
+Vue.prototype.$loading = Loading.service;

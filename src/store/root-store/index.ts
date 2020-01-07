@@ -4,7 +4,7 @@
  * 在 store-types 定义 store 中使用的 Mutation/Action Type 常量
  */
 import { RootState, RootMutations, RootActions } from '@/store/root-store/interface-types';
-import { mockFetch } from '@/utils';
+import { setTimeoutThen } from '@/utils';
 import * as STORE_TYPES from '@/store/root-store/store-types';
 
 const state: RootState = {
@@ -20,7 +20,7 @@ const mutations: RootMutations = {
 
 const actions: RootActions = {
   async [STORE_TYPES.UPDATE_TITLE_ACTION]({ commit }) {
-    const result: string = await mockFetch();
+    const result: string = await setTimeoutThen();
     commit(STORE_TYPES.UPDATE_TITLE_MUTATION, { title: result });
     return result;
   }
