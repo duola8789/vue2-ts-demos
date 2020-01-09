@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { Component, Vue, Provide } from 'vue-property-decorator';
-import Child from '@/views/baseKnowledge/inject-provide/components/Child.vue';
+import Child from '@/views/base-knowledge/inject-provide/components/Child.vue';
 
 @Component({
   components: {

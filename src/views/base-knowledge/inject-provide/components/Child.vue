@@ -20,7 +20,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue, Inject, Provide } from 'vue-property-decorator';
-import Grandson from '@/views/baseKnowledge/inject-provide/components/components/Grandson.vue';
+import Grandson from '@/views/base-knowledge/inject-provide/components/components/Grandson.vue';
 
 @Component({
   components: {

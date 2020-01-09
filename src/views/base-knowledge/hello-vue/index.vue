@@ -50,12 +50,12 @@
 
 <script lang="ts">
 import { Component, Vue, Watch, Ref } from 'vue-property-decorator';
-import HelloChild from '@/views/baseKnowledge/hello-vue/components/HelloChild.vue';
-import HelloVModel from '@/views/baseKnowledge/hello-vue/components/HelloVModel.vue';
-import HelloSync from '@/views/baseKnowledge/hello-vue/components/HelloSync.vue';
-import HelloRef from '@/views/baseKnowledge/hello-vue/components/HelloRef.vue';
+import HelloChild from '@/views/base-knowledge/hello-vue/components/HelloChild.vue';
+import HelloVModel from '@/views/base-knowledge/hello-vue/components/HelloVModel.vue';
+import HelloSync from '@/views/base-knowledge/hello-vue/components/HelloSync.vue';
+import HelloRef from '@/views/base-knowledge/hello-vue/components/HelloRef.vue';
 
-import { DataObj } from '@/views/baseKnowledge/hello-vue/types';
+import { DataObj } from '@/views/base-knowledge/hello-vue/types';
 
 @Component({
   components: {

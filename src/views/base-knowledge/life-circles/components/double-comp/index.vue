@@ -7,7 +7,7 @@
 
 <script lang="ts">
 /* eslint-disable no-console */
-import DoubleCompChild from '@/views/baseKnowledge/life-circles/components/double-comp/child.vue';
+import DoubleCompChild from '@/views/base-knowledge/life-circles/components/double-comp/child.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({

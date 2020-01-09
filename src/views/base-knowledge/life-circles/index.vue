@@ -100,14 +100,13 @@
 
 <script lang="ts">
 /* eslint-disable no-console */
-import { Component, Mixins } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { Route } from 'vue-router';
-import { Step, LifeCircleTypes } from '@/views/baseKnowledge/life-circles/types';
-import VisibleControlMixin from '@/mixins/visible-control-mixin';
-import SingleComp from '@/views/baseKnowledge/life-circles/components/single-comp.vue';
-import KeepAliveComp from '@/views/baseKnowledge/life-circles/components/keep-alive-comp.vue';
-import DoubleComp from '@/views/baseKnowledge/life-circles/components/double-comp/index.vue';
-import MixinComp from '@/views/baseKnowledge/life-circles/components/mixin-comp.vue';
+import { Step, LifeCircleTypes } from '@/views/base-knowledge/life-circles/types';
+import SingleComp from '@/views/base-knowledge/life-circles/components/single-comp.vue';
+import KeepAliveComp from '@/views/base-knowledge/life-circles/components/keep-alive-comp.vue';
+import DoubleComp from '@/views/base-knowledge/life-circles/components/double-comp/index.vue';
+import MixinComp from '@/views/base-knowledge/life-circles/components/mixin-comp.vue';
 
 @Component({
   components: {
@@ -117,7 +116,7 @@ import MixinComp from '@/views/baseKnowledge/life-circles/components/mixin-comp.
     MixinComp
   }
 })
-export default class MixinExample extends Mixins(VisibleControlMixin) {
+export default class MixinExample extends Vue {
   lifeCircleTypes: LifeCircleTypes = [
     { name: '新建过程', value: 'create' },
     { name: '更新过程', value: 'update' },
