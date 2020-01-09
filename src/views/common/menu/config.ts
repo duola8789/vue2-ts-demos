@@ -1,6 +1,6 @@
-import { menu } from '@/views/common/Menu/types';
+import { MenuConfig } from '@/views/common/menu/types';
 
-const menuConfigs: menu[] = [
+const menuConfigs: MenuConfig[] = [
   {
     path: '/base',
     icon: 'el-icon-location',
@@ -11,6 +11,12 @@ const menuConfigs: menu[] = [
       { path: '/base/inject-and-provide', title: 'Inject/Provide', icon: 'el-icon-location' },
       { path: '/base/mixin-example', title: 'Mixin Example', icon: 'el-icon-location' }
     ]
+  },
+  {
+    path: '/application',
+    icon: 'el-icon-basketball',
+    title: '综合应用',
+    children: [{ path: '/application/todo-list', title: 'Todo List', icon: 'el-icon-basketball' }]
   }
 ];
 

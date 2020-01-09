@@ -44,7 +44,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import menuConfig from './config';
-import { menu } from '@/views/common/Menu/types';
+import { MenuConfig } from '@/views/common/menu/types';
 
 const DEFAULT_ICON: string = 'el-icon-setting';
 
@@ -52,7 +52,7 @@ const DEFAULT_ICON: string = 'el-icon-setting';
 export default class Menu extends Vue {
   @Prop({ type: Boolean, default: false, required: true }) readonly isCollapse!: boolean;
 
-  menus: menu[] = menuConfig;
+  menus: MenuConfig[] = menuConfig;
   defaultIcon: string = DEFAULT_ICON;
 }
 </script>
