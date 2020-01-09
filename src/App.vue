@@ -18,14 +18,21 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { State } from 'vuex-class';
-import Menu from '@/views/common/Menu/index.vue';
+import { State, Getter, Mutation, Action } from 'vuex-class';
+import { UPDATE_TITLE_MUTATION, UPDATE_TITLE_ACTION } from '@/store/root-store/store-types';
+import Menu from '@/views/common/menu/index.vue';
 
 @Component({ components: { Menu } })
 export default class App extends Vue {
   isCollapse: boolean = false;
 
-  @State title!: number;
+  @State title!: string;
+
+  @Getter subTitle!: string;
+
+  @Mutation(UPDATE_TITLE_MUTATION) updateTitle!: (payload: { title: string }) => void;
+
+  @Action(UPDATE_TITLE_ACTION) updateTitleSync!: () => void;
 
   get menuClass(): string {
     return this.isCollapse ? 'collapsed-menu' : 'expanded-menu';
@@ -36,6 +43,8 @@ export default class App extends Vue {
   }
 
   collapseMenu(): void {
+    // this.updateTitle({ title: 'hello' });
+    // this.updateTitleSync();
     this.isCollapse = !this.isCollapse;
   }
 }
