@@ -7,6 +7,10 @@ export default class TestStore extends VuexModule {
   // state
   message: string = '';
 
+  get UpperMessage() {
+    return this.message;
+  }
+
   @Mutation
   UPDATE_MESSAGE_MUTATION(title: string): void {
     this.message = title;
@@ -14,7 +18,7 @@ export default class TestStore extends VuexModule {
 
   @Action
   async UPDATE_MESSAGE_ACTION(): Promise<string> {
-    const result: string = await setTimeoutThen();
+    const result: string = await setTimeoutThen(1000, 'ok');
     this.context.commit('UPDATE_MESSAGE_MUTATION', result);
     return result;
   }
