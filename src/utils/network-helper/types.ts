@@ -29,7 +29,7 @@ export interface Del {
 }
 
 export interface SetTimeoutThen {
-  (delay?: number): Promise<any>;
+  <T>(delay?: number, result?: T): Promise<T>;
 }
 
 export type Instance = AxiosInstance;

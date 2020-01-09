@@ -14,7 +14,7 @@ class LoadingCounter {
 
   addLoading() {
     this.count++;
-    if (this.count <= 1) {
+    if (this.getLoadings() <= 1) {
       this.loadingInstance = Loading.service({
         lock: true,
         background: 'rgba(0, 0, 0, 0.7)'
@@ -24,7 +24,7 @@ class LoadingCounter {
 
   subLoading() {
     this.count--;
-    if (this.count === 0 && this.loadingInstance) {
+    if (this.getLoadings() === 0 && this.loadingInstance) {
       this.loadingInstance.close();
     }
   }

@@ -13,7 +13,7 @@ import {
 } from '@/utils/network-helper/types';
 import { loadingCounter } from '@/utils/network-helper/loading-counter';
 
-// TODO: 超时重试，因为无法向 axios.create 中传入自定义参数，所以无法在具体请求中控制是否开启超时重试，所以暂时没有添加
+// TODO: 超时重试
 
 // HTTP CODE 对照码
 // MSDN: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status
@@ -133,10 +133,10 @@ const del: Del = async (url, data = {}, config) => {
 const request = { get, post, del, put };
 
 // setTimeout 改造为 promise
-const setTimeoutThen: SetTimeoutThen = (delay = 3000) => {
+const setTimeoutThen: SetTimeoutThen = (delay = 3000, result) => {
   return new Promise((resolve) => {
     setTimeout((): void => {
-      resolve();
+      resolve(result);
     }, delay);
   });
 };
