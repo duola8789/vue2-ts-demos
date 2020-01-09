@@ -2,12 +2,11 @@ const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
-  lintOnSave: process.env.NODE_ENV !== 'production',
+  lintOnSave: process.env.NODE_ENV === 'development' ? 'error' : false,
   configureWebpack: {
     plugins: [
       new StyleLintPlugin({
         files: ['src/**/*.{vue,htm,html,css,sss,less,scss,sass}'],
-        lintDirtyModulesOnly: true,
       })
     ]
   },
