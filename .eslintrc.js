@@ -16,7 +16,9 @@ module.exports = {
     "plugin:prettier/recommended",
   ],
   rules: {
-    'vue/component-name-in-template-casing': ['error',  'kebab-case']
+    'vue/component-name-in-template-casing': ['error',  'kebab-case'],
+    // 要求使用骆驼拼写法 https://cn.eslint.org/docs/rules/camelcase
+    'camelcase': ['error'],
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"
