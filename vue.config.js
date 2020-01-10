@@ -20,7 +20,16 @@ module.exports = {
     config.plugin('fork-ts-checker').tap(option => {
       option[0].async = false;
       return option;
-    })
+    });
+
+    // 编译时去除 console
+    if (process.env.NODE_ENV !== 'development') {
+      config.optimization.minimizer('terser').tap((args) => {
+        args[0].terserOptions.compress.drop_console = true;
+        args[0].terserOptions.compress.drop_debugger = true;
+        return args
+      })
+    }
   },
 };
 
