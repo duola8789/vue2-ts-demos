@@ -22,4 +22,12 @@ const removeCookieHelper = (name: string, options?: CookieAttributes): void => {
   return Cookies.remove(name, options);
 };
 
-export { setCookieHelper, getCookieHelper, getAllCookiesHelper, removeCookieHelper };
+// 生成全局唯一的 Id
+const uIdHelper = (function uuid() {
+  let id = 0;
+  return function getId(): string {
+    return String(id++);
+  };
+})();
+
+export { setCookieHelper, getCookieHelper, getAllCookiesHelper, removeCookieHelper, uIdHelper };

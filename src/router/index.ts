@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import baseKnowledge from './modules/baseKnowledge';
+import baseKnowledge from './modules/base-knowledge';
+import application from './modules/application';
 import { lazyLoadHelper } from '@/utils';
 import { beforeEachCallback, beforeResolveCallback, afterEachCallback } from '@/router/router-guards';
 
@@ -10,16 +11,17 @@ const routes: RouteConfig[] = [
   {
     path: '/',
     name: 'home',
-    component: lazyLoadHelper('Home'),
+    component: lazyLoadHelper('home/index'),
     meta: {
       title: 'Vue Learning Demos'
     }
   },
   ...baseKnowledge,
+  ...application,
   {
     path: '*',
     name: 'NotFound',
-    component: lazyLoadHelper('common/NotFound'),
+    component: lazyLoadHelper('common/not-found'),
     meta: {
       title: 'Not Found'
     }

@@ -18,8 +18,10 @@ import {
   Dialog,
   Steps,
   Step,
+  CheckboxGroup,
   Notification,
-  Loading
+  Loading,
+  Message
 } from 'element-ui';
 
 [
@@ -39,9 +41,11 @@ import {
   Checkbox,
   Card,
   Steps,
+  CheckboxGroup,
   Step,
   Dialog
 ].forEach((Comp) => Vue.use(Comp));
 
 Vue.prototype.$notify = Notification;
 Vue.prototype.$loading = Loading.service;
+Vue.prototype.$message = Message;

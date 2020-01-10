@@ -88,7 +88,7 @@ const commonErrorHandler: InterceptorResponseHandler = {
 // 创建 Axios 实例
 const axiosInstance: Instance = axios.create({
   timeout: 10000,
-  baseURL: process.env.VUE_BASE_URL
+  baseURL: process.env.VUE_APP_BASE_URL
 });
 
 // 请求拦截器

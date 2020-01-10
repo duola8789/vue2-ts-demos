@@ -6,7 +6,7 @@ const baseKnowledgeRoutes: RouteConfig[] = [
   {
     path: '/base/hello-vue',
     name: 'base',
-    component: lazyLoadHelper('baseKnowledge/hello-vue/index'),
+    component: lazyLoadHelper('base-knowledge/hello-vue/index'),
     meta: {
       title: 'Hello Vue'
     }
@@ -14,7 +14,7 @@ const baseKnowledgeRoutes: RouteConfig[] = [
   {
     path: '/base/life-circles',
     name: 'base',
-    component: lazyLoadHelper('baseKnowledge/life-circles/index'),
+    component: lazyLoadHelper('base-knowledge/life-circles/index'),
     beforeEnter: beforeEnterLifeCircle,
     meta: {
       title: 'Life Circles'
@@ -23,7 +23,7 @@ const baseKnowledgeRoutes: RouteConfig[] = [
   {
     path: '/base/inject-and-provide',
     name: 'base',
-    component: lazyLoadHelper('baseKnowledge/inject-provide/index'),
+    component: lazyLoadHelper('base-knowledge/inject-provide/index'),
     meta: {
       title: 'Inject and Provide'
     }
@@ -31,7 +31,7 @@ const baseKnowledgeRoutes: RouteConfig[] = [
   {
     path: '/base/mixin-example',
     name: 'base',
-    component: lazyLoadHelper('baseKnowledge/mixin-example/index'),
+    component: lazyLoadHelper('base-knowledge/mixin-example/index'),
     meta: {
       title: 'Mixin Example'
     }
