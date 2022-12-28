@@ -5,3 +5,9 @@ declare module 'axios' {
     customProperty?: boolean;
   }
 }
+
+declare global {
+  interface Window {
+    __COMMIT_INFO__?: string;
+  }
+}

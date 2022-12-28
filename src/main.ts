@@ -20,6 +20,8 @@ Vue.config.errorHandler = function(err, vm, info) {
   console.groupEnd();
 };
 
+window.__COMMIT_INFO__ = process.env.commitInfo;
+
 new Vue({
   router,
   store,
