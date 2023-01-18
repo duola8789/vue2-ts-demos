@@ -1,4 +1,7 @@
-# vue-learning-new
+# vue2-ts-demos
+
+使用Vue+VueCLTypeScript搭建的各种Demo
+
 
 ## 脚本
 
